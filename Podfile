@@ -8,6 +8,10 @@ target 'FirebaseChatApp' do
   # Pods for FirebaseChatApp
   pod 'SDWebImage'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'FirebaseChatAppTests' do
     inherit! :search_paths

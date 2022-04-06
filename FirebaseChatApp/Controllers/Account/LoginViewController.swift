@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -55,7 +56,7 @@ class LoginViewController: UIViewController {
     
     private let loginBtn: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .link
+        button.backgroundColor = .systemGreen
         button.setTitle("Login", for: .normal)
         button.titleLabel?.textColor = .white
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
@@ -119,11 +120,27 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginBtnTapped() {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
         guard let email = emailField.text ,
               let password = passwordField.text,
               !email.isEmpty, !password.isEmpty, password.count >= 6 else {
             alertUserLoginError()
             return
+        }
+        
+        //firebase login
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self]authResult, error in
+            guard let strongSelf = self else {
+                return
+            }
+            guard let result = authResult, error == nil else {
+                print("Login failed")
+                return
+            }
+            let user = result.user
+            print("Results \(user.email ?? "")")
+            strongSelf.navigationController?.dismiss(animated: true)
         }
     }
     

@@ -202,32 +202,34 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        DatabaseManager.shared.validateEmail(with: email) {[weak self] result in
-            
-            print("result \(result)")
+//        DatabaseManager.shared.validateEmail(with: email) { [weak self] exists in
+//
+//            guard let strongSelf = self else {
+//                return
+//            }
+//
+//            guard !exists else {
+//                // user already exists
+//                strongSelf.alertUserLoginError(message: "Looks like a user account for that email address already exists.")
+//                return
+//            }
+//
+//
+//        }
+        
+       
+        // Firebase log in
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else {
+                           return
+                       }
+            guard authResult != nil, error == nil else {
+                print("Error creating User")
                 return
             }
-            
-            guard !result else {
-                // user already exists
-                strongSelf.alertUserLoginError(message: "Oops!!!\nUser already exists")
-                return
-            }
-            
-            // Firebase log in
-            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                
-                
-                guard authResult != nil, error == nil else {
-                    print("Error creating User")
-                    return
-                }
-                
-                DatabaseManager.shared.insertUser(with: ChatAppUser(profilePicUrl: "", displayName: firstName, emailAddress: email))
-                strongSelf.navigationController?.dismiss(animated: true)
-            }
-            
+            DatabaseManager.shared.test()
+//            DatabaseManager.shared.insertUser(with: ChatAppUser(profilePicUrl: "", displayName: firstName, emailAddress: email))
+//            strongSelf.navigationController?.dismiss(animated: true)
         }
         
     }

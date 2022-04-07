@@ -12,6 +12,7 @@ target 'FirebaseChatApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
 
   target 'FirebaseChatAppTests' do
     inherit! :search_paths

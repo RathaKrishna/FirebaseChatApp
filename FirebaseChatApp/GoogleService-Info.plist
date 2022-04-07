@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>648087857695-8i1d2as13aiibsa350a94m5bocihmet0.apps.googleusercontent.com</string>
+	<string>517808830556-24s0dlc10c9a10jtomla1emuikje78ic.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.648087857695-8i1d2as13aiibsa350a94m5bocihmet0</string>
+	<string>com.googleusercontent.apps.517808830556-24s0dlc10c9a10jtomla1emuikje78ic</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCwDpztVVWn4pjp_coJoEAqxs-k9TypXvY</string>
+	<string>AIzaSyDKixidIgAivUUEw1X3t-lO0BmeOxILLeA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>648087857695</string>
+	<string>517808830556</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.rk.FirebaseChatApp</string>
+	<string>com.rk.messengerApp</string>
 	<key>PROJECT_ID</key>
-	<string>chatapp-98476</string>
+	<string>messenger-ed069</string>
 	<key>STORAGE_BUCKET</key>
-	<string>chatapp-98476.appspot.com</string>
+	<string>messenger-ed069.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:648087857695:ios:fd27960e9519ec34c3432a</string>
+	<string>1:517808830556:ios:ec10074b1e0dcdd95fce99</string>
 </dict>
 </plist>
